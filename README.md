@@ -1,27 +1,3 @@
-# Ants Simulation in Clojure
-
-## Motivation
-
-After watching Rich's great [talk about concurrency in Clojure](https://www.youtube.com/watch?v=dGVqrGmwOAw),
-I wanted to experiment with his original Ants Simulation and learn more about
-concurrency, agents, refs, state management, etc.
-
-I ended up refactoring the original solution, because:
-
-- State is used in far too many places. `deref` is the norm. It's hard to spot pure functions.
-- Naming is generally bad, with lots of abbreviations and bindings with one char.
-- It has one big namespace, which makes things more confusing when you're trying to follow along and make changes.
-- It lacks the functional punch we all love! Example: most functions are using `let`s, sometimes as much as 6 bindings. It feels imperative code in many ways and lacks composability.
-
-Having said all of that, I had tons of fun and learned a lot playing around with this simulation.
-
-## TODO
-
-- [ ] Test parts of the simulation using clojure.spec
-- [ ] Use clojure.spec to generate ants, pheromones, etc
-- [ ] Improve dev workflow so one can make real-time changes through the REPL
-- [ ] Achieve greater simplicity
-
 ## Running the simulation
 
 This project uses [lein](https://leiningen.org/). Run it with:
